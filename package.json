@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "psql -X1v ON_ERROR_STOP=1 -f schema.sql extend_demo && nodemon --watch plugin.js -x 'postgraphile -c extend_demo -s app --allow-explain --enhance-graphiql --append-plugins `pwd`/plugin.js'"
+  },
+  "dependencies": {
+    "graphile-utils": "^4.12.1",
+    "nodemon": "^2.0.13",
+    "postgraphile": "^4.12.4"
+  }
+}
